@@ -20,19 +20,19 @@ function dibujarLinea(color, x_inicial, y_inicial, x_final, y_final, lienzo) {
 
 dibujarLinea("red", x-1, y-1, x+1, y+1, papel);
 document.addEventListener("keyup", function(e) {
-    if (e.key === 'w' || e.key === 'k') {
+    if (e.key === 'w' || e.key === 'k' || e.key === 'ArrowUp') {
       dibujarLinea(colorLinea, x, y, x, y - mov, papel);
       y = y - mov;
     }
-    else if (e.key === 's' || e.key === 'j') {
+    else if (e.key === 's' || e.key === 'j' || e.key === 'ArrowDown') {
       dibujarLinea(colorLinea, x, y, x, y + mov, papel);
       y = y + mov;
     }
-    else if (e.key === "a" || e.key === 'h') {
+    else if (e.key === "a" || e.key === 'h' || e.key === 'ArrowLeft') {
       dibujarLinea(colorLinea, x, y, x - mov, y, papel);
       x = x - mov;
     }
-    else if (e.key === "d" || e.key === 'l') {
+    else if (e.key === "d" || e.key === 'l' || e.key === 'ArrowRight') {
       dibujarLinea(colorLinea, x, y, x + mov, y, papel);
       x = x + mov;
     }
