@@ -1,11 +1,11 @@
-// Variables
-let canvas = document.getElementById("area_de_dibujo");
-let papel = canvas.getContext("2d");
+// Variables globales
+const canvas = document.getElementById('canvas');
+const papel = canvas.getContext('2d');
 
 let x = 960;
 let y = 400;
 
-const colorLinea = "black";
+const colorLinea = '#111';
 const mov = 20;
 
 function dibujarLinea(color, x_inicial, y_inicial, x_final, y_final, lienzo) {
@@ -19,20 +19,20 @@ function dibujarLinea(color, x_inicial, y_inicial, x_final, y_final, lienzo) {
 }
 
 dibujarLinea("red", x-1, y-1, x+1, y+1, papel);
-document.addEventListener("keyup", function(e) {
-    if (e.key === 'w' || e.key === 'k' || e.key === 'ArrowUp') {
+document.addEventListener('keyup', evt => {
+    if (evt.key === 'w' || evt.key === 'k' || evt.key === 'ArrowUp') {
       dibujarLinea(colorLinea, x, y, x, y - mov, papel);
       y = y - mov;
     }
-    else if (e.key === 's' || e.key === 'j' || e.key === 'ArrowDown') {
+    else if (evt.key === 's' || evt.key === 'j' || evt.key === 'ArrowDown') {
       dibujarLinea(colorLinea, x, y, x, y + mov, papel);
       y = y + mov;
     }
-    else if (e.key === "a" || e.key === 'h' || e.key === 'ArrowLeft') {
+    else if (evt.key === "a" || evt.key === 'h' || evt.key === 'ArrowLeft') {
       dibujarLinea(colorLinea, x, y, x - mov, y, papel);
       x = x - mov;
     }
-    else if (e.key === "d" || e.key === 'l' || e.key === 'ArrowRight') {
+    else if (evt.key === "d" || evt.key === 'l' || evt.key === 'ArrowRight') {
       dibujarLinea(colorLinea, x, y, x + mov, y, papel);
       x = x + mov;
     }
